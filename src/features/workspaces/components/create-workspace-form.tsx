@@ -25,6 +25,8 @@ import {
 import { createWorkspaceSchema } from "../schemas";
 import { useCreateWorkspace } from "../api/use-create-workspace";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 
 interface CreateWorkspaceFormProps {
@@ -32,6 +34,7 @@ interface CreateWorkspaceFormProps {
 };
 
 export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
+    const router = useRouter();
     const { mutate, isPending } = useCreateWorkspace();
 
     const inputRef = useRef<HTMLInputElement>(null);
@@ -50,8 +53,9 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
         };
 
         mutate({ form: finalValues }, {
-            onSuccess:() => {
+            onSuccess:({ data }) => {
                 form.reset();
+                router.push(`/workspaces/${data.$id}`);
                 // TODO: Redirect to new workspace
             }
         });
@@ -160,6 +164,7 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
                             variant="secondary"
                             onClick={onCancel}
                             disabled={isPending}
+                            className={cn(!onCancel && "invisible")}
                             >
                                 Cancel
                             </Button>
