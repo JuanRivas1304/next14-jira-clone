@@ -1,5 +1,5 @@
 .rbc-header {
-    @apply test-sm;
+    @apply text-sm;
     @apply font-normal;
     @apply pb-4;
     @apply text-muted-foreground;
@@ -18,7 +18,7 @@
 
 .rbc-month-row {
     @apply min-h-[180px];
-    @apply border-t
+    @apply border-t;
     @apply border-x;
 }
 

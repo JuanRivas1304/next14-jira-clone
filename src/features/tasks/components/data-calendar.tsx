@@ -11,7 +11,7 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 
 import { Task } from "../types";
 import { useState } from "react";
-import "react-big-calendar/lib/css/react-big-calendar";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./data-calendar.css"
 import { EventCard } from "./event-card";
 import { Button } from "@/components/ui/button";
