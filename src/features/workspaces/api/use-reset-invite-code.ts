@@ -26,6 +26,7 @@ export const useResetInviteCode = () => {
         },
         onSuccess: ({ data }) => {
           toast.success("Invite code reset")
+
           queryClient.invalidateQueries({ queryKey: ["workspaces"] });
           queryClient.invalidateQueries({ queryKey: ["workspaces", data.$id] });
         },

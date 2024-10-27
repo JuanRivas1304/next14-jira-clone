@@ -1,6 +1,7 @@
 import { Navigation } from "./navigation"
 import { WorkspaceSwitcher } from "./workspace-switcher"
 import { DottedSeparator } from "./dotted-separator"
+import { Projects } from "./projects";
 
 export const Siderbar = () => {
     return (
@@ -9,6 +10,8 @@ export const Siderbar = () => {
             <WorkspaceSwitcher />
             <DottedSeparator className="my-4"/>
             <Navigation />
+            <DottedSeparator className="my-4"/>
+            <Projects />
         </aside>
     );
 };
