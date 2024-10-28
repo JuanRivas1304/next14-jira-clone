@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/form";
 import { loginSchema } from "../schemas";
 import { useLogin } from "../api/use-login";
+import { signUpWithGithub } from "@/lib/oauth";
 
 export const SignInCard = () => {
     const { mutate, isPending } = useLogin();
@@ -46,12 +47,15 @@ export const SignInCard = () => {
         <FormProvider {...form}>
             <Card className="w-full h-full md:w-[487px] border-none shadow-none">
                 <CardHeader className="flex items-center justify-center text-center p-7">
-                    <CardTitle className="text-2xl">Welcome back!</CardTitle>
+                    <CardTitle className="text-2xl">
+                        Welcome back!
+                    </CardTitle>
                 </CardHeader>
                 <div className="px-7">
                     <DottedSeparator />
                 </div>
                 <CardContent className="p-7">
+                    <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                         <FormField
                             name="email"
@@ -89,6 +93,7 @@ export const SignInCard = () => {
                             Login
                         </Button>
                     </form>
+                    </Form>
                 </CardContent>
                 <div className="px-7">
                     <DottedSeparator />
@@ -101,10 +106,14 @@ export const SignInCard = () => {
                             </div>
                             Login with Google
                         </Button>
-                        <Button disabled={isPending} variant="secondary" size="lg" className="w-full">
-                            <div className="mr-2 size-5">
-                                <FaGithub />
-                            </div>
+                        <Button
+                        onClick={() => signUpWithGithub()}
+                        disabled={isPending} 
+                        variant="secondary" 
+                        size="lg" 
+                        className="w-full"
+                        >
+                            <FaGithub className="mr-2 size-5" />
                             Login with Github
                         </Button>
                     </CardContent>
