@@ -125,7 +125,7 @@ export const EditProjectForm = ({ onCancel, initialValues }: EditProjectFormProp
                                     Project Name 
                                 </FormLabel>
                                 <FormControl>
-                                    <input 
+                                    <Input 
                                     {...field}
                                     placeholder="Enter project name "
                                     />

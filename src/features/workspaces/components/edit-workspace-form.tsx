@@ -154,7 +154,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
                                     Workspace Name 
                                 </FormLabel>
                                 <FormControl>
-                                    <input 
+                                    <Input 
                                     {...field}
                                     placeholder="Enter workspace name "
                                     />
@@ -194,7 +194,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
                                             <p className="text-sm text-muted-foreground">
                                                 JPG, PNG, SVG or JPEG, MAX 1mb
                                             </p>
-                                            <input
+                                            <Input
                                                 className="hidden"
                                                 type="file"
                                                 accept=".jpg, .png, .jpeg, .svg"

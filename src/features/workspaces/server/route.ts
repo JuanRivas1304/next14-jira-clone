@@ -103,6 +103,8 @@ const app = new Hono()
 
             const { name, image } = c.req.valid("form");
 
+            console.log("Image type:", image);
+
             let uploadedImageUrl: string | undefined;
 
             if(image instanceof File) {
@@ -117,7 +119,7 @@ const app = new Hono()
                     file.$id,
                 );
 
-                uploadedImageUrl = `data:image/png;base64,$${Buffer.from(arrayBuffer).toString("base64")}`;
+                uploadedImageUrl = `data:image/png;base64,${Buffer.from(arrayBuffer).toString("base64")}`;
             }
 
             const workspace = await databases.createDocument(

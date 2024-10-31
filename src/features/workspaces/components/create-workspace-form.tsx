@@ -92,7 +92,7 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
                                     Workspace Name 
                                 </FormLabel>
                                 <FormControl>
-                                    <input 
+                                    <Input 
                                     {...field}
                                     placeholder="Enter workspace name "
                                     />
@@ -132,7 +132,7 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
                                             <p className="text-sm text-muted-foreground">
                                                 JPG, PNG, SVG or JPEG, MAX 1mb
                                             </p>
-                                            <input
+                                            <Input
                                                 className="hidden"
                                                 type="file"
                                                 accept=".jpg, .png, .jpeg, .svg"

@@ -47,7 +47,7 @@ const app = new Hono()
                     file.$id,
                 );
 
-                uploadedImageUrl = `data:image/png;base64,$${Buffer.from(arrayBuffer).toString("base64")}`;
+                uploadedImageUrl = `data:image/png;base64,${Buffer.from(arrayBuffer).toString("base64")}`;
             }
 
             const project = await databases.createDocument(
@@ -171,7 +171,7 @@ const app = new Hono()
                     file.$id,
                 );
 
-                uploadedImageUrl = `data:image/png;base64,$${Buffer.from(arrayBuffer).toString("base64")}`;
+                uploadedImageUrl = `data:image/png;base64,${Buffer.from(arrayBuffer).toString("base64")}`;
             } else {
                 uploadedImageUrl = image;
             }

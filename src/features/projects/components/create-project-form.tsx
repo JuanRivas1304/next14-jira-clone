@@ -94,7 +94,7 @@ export const CreateProjectForm = ({ onCancel }: CreateProjectFormProps) => {
                                     project Name 
                                 </FormLabel>
                                 <FormControl>
-                                    <input 
+                                    <Input 
                                     {...field}
                                     placeholder="Enter project name "
                                     />
@@ -134,7 +134,7 @@ export const CreateProjectForm = ({ onCancel }: CreateProjectFormProps) => {
                                             <p className="text-sm text-muted-foreground">
                                                 JPG, PNG, SVG or JPEG, MAX 1mb
                                             </p>
-                                            <input
+                                            <Input
                                                 className="hidden"
                                                 type="file"
                                                 accept=".jpg, .png, .jpeg, .svg"
