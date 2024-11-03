@@ -16,7 +16,7 @@ import { columns } from "./columns";
 import { DataKanban } from "./data-kanban";
 import { useCallback } from "react";
 import { TaskStatus } from "../types";
-import { usebulkUpdateTasks } from "../api/use-bulk-update-tasks";
+import { useBulkUpdateTasks } from "../api/use-bulk-update-tasks";
 import { DataCalendar } from "./data-calendar";
 import { useProjectId } from "@/features/projects/hooks/use-project-id";
 
@@ -41,7 +41,7 @@ export const TaskViewSwitcher = ({ hideProjectFilter }: TaskViewSwitcherProps) =
     const paramProjectId = useProjectId();
     const { open } = useCreateTaskModal();
 
-    const { mutate: bulkUpdate } = usebulkUpdateTasks();
+    const { mutate: bulkUpdate } = useBulkUpdateTasks();
 
     const { 
         data: tasks, 
