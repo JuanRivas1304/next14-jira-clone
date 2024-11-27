@@ -6,8 +6,13 @@ import { ID } from "node-appwrite";
 import { deleteCookie, setCookie } from "hono/cookie";
 import { AUTH_COOKIE } from "../constants";
 import { sessionMiddleware } from "@/lib/session-middleware";
+import { cors } from 'hono/cors';
 
 const app = new Hono()
+    .use(cors({ 
+    origin: 'https://next14-jira-clone-lzbz.vercel.app',
+    allowMethods: ['GET', 'POST'], 
+    }))
     .get(
         "/current", 
         sessionMiddleware, 
