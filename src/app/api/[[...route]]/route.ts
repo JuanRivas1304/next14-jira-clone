@@ -11,7 +11,7 @@ import tasks from "@/features/tasks/server/route";
 const app = new Hono().basePath("/api");
 
 app.use(cors({
-    origin: '*',
+    origin: 'next14-jira-clone-lzbz.vercel.app',
     allowMethods: ['GET', 'POST', 'PATCH', 'DELETE'],
     allowHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
