@@ -10,7 +10,7 @@ import { cors } from 'hono/cors';
 
 const app = new Hono()
     .use(cors({ 
-    origin: 'https://next14-jira-clone-lzbz.vercel.app',
+    origin: '*',
     allowMethods: ['GET', 'POST'],
     allowHeaders: ['Content-Type', 'Authorization'],
     credentials: true, // activada porque se usan cookies
