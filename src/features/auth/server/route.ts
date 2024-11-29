@@ -13,7 +13,7 @@ const app = new Hono()
     origin: 'https://next14-jira-clone-lzbz.vercel.app',
     allowMethods: ['GET', 'POST'],
     allowHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
+    credentials: true, // activada porque se usan cookies
     }))
     .get(
         "/current", 
