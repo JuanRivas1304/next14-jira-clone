@@ -11,7 +11,9 @@ import { cors } from 'hono/cors';
 const app = new Hono()
     .use(cors({ 
     origin: 'https://next14-jira-clone-lzbz.vercel.app',
-    allowMethods: ['GET', 'POST'], 
+    allowMethods: ['GET', 'POST'],
+    allowHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
     }))
     .get(
         "/current", 

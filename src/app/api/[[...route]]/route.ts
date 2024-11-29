@@ -13,6 +13,8 @@ const app = new Hono().basePath("/api");
 app.use(cors({
     origin: 'https://next14-jira-clone-lzbz.vercel.app',
     allowMethods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    allowHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
 }))
 
 const routes = app
